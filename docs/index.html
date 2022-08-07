@@ -12,17 +12,22 @@
 
 <body>
 
-    <div id="overlay" onclick="off()">
-        <form id="add-book-form" style="display: none;">
+    <div id="overlay">
+        <form id="add-book-form" style="display: none;" onsubmit="return false">
             <h3>Add new book</h3>
-            <input type="text" id = "title" placeholder="Title" required maxlength="100"> <br>
-            <input type="text" id = "author" placeholder="Author" required maxlength="100"> <br>
-            <input type="number" id = "pages" placeholder="Pages" required min="1"> <br>
+            <input type="text" id="title" placeholder="Title" required maxlength="100"> <br>
+            <input type="text" id="author" placeholder="Author" required maxlength="100"> <br>
+            <input type="number" id="pages" placeholder="Pages" required min="1"> <br>
             <label for="read"> Read?</label>
-            <input type="checkbox" id = "read"  value = "read"> <br>
-            <input type="submit" value = "Submit">
-        </form></div>
+            <input type="checkbox" id="read" value="read"> <br>
+            <input type="submit" value="Submit" id="bookSubmit" onclick="submitClicked()">
+            <input type="button" value="X" onclick="off()">
+        </form>
+
+    </div>
+
     <button id="add-book" onclick="on()">add book</button>
+    <div id="book-container"></div>
     <script src="library.js" async defer></script>
 </body>
 

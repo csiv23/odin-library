@@ -12,7 +12,13 @@
     cursor: pointer; /* Add a pointer on hover */
   }
 
-  #add-book {
+  #book-container {
+    width: 100vw;
+    height: 40vh;
+    background-color: slateblue;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
   }
 
   #add-book-form {
@@ -20,5 +26,4 @@
     margin-top: 25vh;
     background-color: red;
     width: fit-content;
-    
   }
