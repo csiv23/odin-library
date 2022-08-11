@@ -7,10 +7,10 @@ document.addEventListener('click', function (e) {
         case e.target && e.target.id == "readButton":
             if (readButton.textContent == "Read") {
                 readButton.textContent = "Not read";
-                readButton.style.background = "red";
+                readButton.style.background = "#ff7070";
             } else {
                 readButton.textContent = "Read";
-                readButton.style.background = "lightgreen";
+                readButton.style.background = "#bfffbc";
             }
 
             var element = e.target;
@@ -20,11 +20,9 @@ document.addEventListener('click', function (e) {
             break;
         case e.target && e.target.id == "removeButton":
             var element = e.target;
-            var book = getBookFromElement(element);
-            removeBook(book.title);
-
-            var parent = element.parentElement;
-            parent.remove();
+            var book = element.parentElement.parentElement;
+            var title = book.children[0];
+            removeBook(title);
             break;
     }
 
@@ -55,6 +53,8 @@ function removeBook(bookTitle) {
         return object.title == bookTitle;
     });
     myLibrary.splice(indexOfObject, 1);
+
+    bookTitle.parentElement.remove();
 }
 
 function addBookToLibrary(book) {
@@ -101,16 +101,17 @@ function submitClicked() {
     var readButton = document.createElement("button");
     var removeButton = document.createElement("button");
 
-    titleElement.textContent = (`${title}`);
+
+    titleElement.textContent = '"' + title + '"';
     authorElement.textContent = (`${author}`);
     pagesElement.textContent = (`${pages} pages`);
 
     if (read == true) {
         readButton.textContent = "Read";
-        readButton.style.background = "lightgreen";
+        readButton.style.background = "#bfffbc";
     } else {
         readButton.textContent = "Not read";
-        readButton.style.background = "red";
+        readButton.style.background = "#ff7070";
     }
     removeButton.textContent = "Remove";
 
@@ -127,11 +128,15 @@ function submitClicked() {
     buttonWrapper.appendChild(removeButton)
     book.appendChild(buttonWrapper);
 
+    book.style.fontFamily = "Cambria";
+    book.style.marginBottom = "1%";
     book.style.textAlign = "center";
     book.style.fontSize = "40px";
-    book.style.height = "200px";
-    book.style.width = "200px";
-    book.style.backgroundColor = "slategrey";
+    book.style.height = "195px";
+    book.style.width = "195px";
+    book.style.borderRadius = "8px";
+    book.style.backgroundColor = "#dbe4ee";
+    book.style.marginto
     document.getElementById("book-container").appendChild(book);
 
     displayBooks();
