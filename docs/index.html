@@ -11,13 +11,17 @@
 </head>
 
 <body>
+    <header>
+        <div id="logo">library</div>
+        <div id="login">login</div>
+    </header>
 
     <div id="overlay">
         <form id="add-book-form" style="display: none;" onsubmit="return false">
             <h3>Add new book</h3>
             <input type="text" id="title" placeholder="Title" required maxlength="100"> <br>
             <input type="text" id="author" placeholder="Author" required maxlength="100"> <br>
-            <input type="number" id="pages" placeholder="Pages"  min="1" required> <br>
+            <input type="number" id="pages" placeholder="Pages" min="1" required> <br>
             <label for="read"> Read?</label>
             <input type="checkbox" id="read" value="read"> <br>
             <input type="submit" value="Submit" id="bookSubmit" onclick="submitClicked()">
@@ -26,7 +30,9 @@
 
     </div>
 
-    <button id="add-book" onclick="on()">+ Add book</button>
+    <div id="add-book-container">
+        <button id="add-book" onclick="on()">+ Add book</button>
+    </div>
     <div id="book-container"></div>
     <script src="library.js" async defer></script>
 </body>
