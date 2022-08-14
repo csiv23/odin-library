@@ -67,7 +67,7 @@ function displayBooks() {
 
 function on() {
     document.getElementById("overlay").style.display = "block";
-    document.getElementById('add-book-form').style.display = 'block';
+    document.getElementById('block').style.display = 'block';
 }
 
 function off() {
@@ -132,11 +132,16 @@ function submitClicked() {
     book.style.marginBottom = "1%";
     book.style.textAlign = "center";
     book.style.fontSize = "40px";
-    book.style.height = "195px";
-    book.style.width = "195px";
+    book.style.height = "200px";
+    book.style.width = "200px";
     book.style.borderRadius = "8px";
     book.style.backgroundColor = "#dbe4ee";
-    book.style.marginto
+    
+    buttonWrapper.style.display = "flex";
+    buttonWrapper.style.justifyContent = "center";
+    buttonWrapper.style.gap = "2%";
+    buttonWrapper.style.marginTop = "7%";
+
     document.getElementById("book-container").appendChild(book);
 
     displayBooks();
