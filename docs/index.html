@@ -17,16 +17,34 @@
     </header>
 
     <div id="overlay">
-        <form id="add-book-form" style="display: none;" onsubmit="return false">
-            <h3>Add new book</h3>
-            <input type="text" id="title" placeholder="Title" required maxlength="100"> <br>
-            <input type="text" id="author" placeholder="Author" required maxlength="100"> <br>
-            <input type="number" id="pages" placeholder="Pages" min="1" required> <br>
-            <label for="read"> Read?</label>
-            <input type="checkbox" id="read" value="read"> <br>
-            <input type="submit" value="Submit" id="bookSubmit" onclick="submitClicked()">
-            <input type="button" value="X" onclick="off()">
-        </form>
+        <div id="block" style="display:none">
+            <form id="add-book-form"
+                style="display: flex; flex-direction: column; justify-content: center; align-items: center;"
+                onsubmit="return false">
+                <div id="form-text-wrapper" style="height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    width: 100%;">
+                    <h3>Add new book</h3>
+                    <div id="text-inputs" style = "width: 100%;">
+                        <input type="text" id="title" placeholder="Title" required maxlength="100"> <br>
+                        <input type="text" id="author" placeholder="Author" required maxlength="100"> <br>
+                        <input type="number" id="pages" placeholder="Pages" min="1" required> <br>
+                    </div>
+                    <div id="read-checkbox" style="display: flex; align-items: center; justify-content: center;">
+                        <label for="read"> Read?</label>
+                        <input type="checkbox" id="read" value="read"> <br>
+                    </div>
+                    <div id="submission-content" style="display: flex;">
+                        <input type="submit" value="Submit" id="bookSubmit" onclick="submitClicked()">
+                        <input type="button" value="X" onclick="off()">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     </div>
 

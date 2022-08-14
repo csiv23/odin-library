@@ -1,4 +1,9 @@
-html,body {padding:0; margin:0; background-color: #81a4cd;}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #81a4cd;
+}
 
 
 :root {
@@ -10,78 +15,118 @@ html,body {padding:0; margin:0; background-color: #81a4cd;}
 }
 
 #overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-  }
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+}
 
-  header {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.5rem;
-    padding-right: 2%;
-    padding-left: 2%;
-    height: 10vh;
-    color: #dbe4ee;
-    background-color: #3e7cb1;
-  }
+header {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  padding-right: 2%;
+  padding-left: 2%;
+  height: 10vh;
+  color: #dbe4ee;
+  background-color: #3e7cb1;
+}
 
-  #logo {
-    font-weight: 600;
-    font-size: 2rem;
-  }
+#logo {
+  font-weight: 600;
+  font-size: 2rem;
+}
 
-  #book-container {
-    width: 100vw;
-    background-color: #81a4cd;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1% 1%;
-  }
+#book-container {
+  width: 90vw;
+  background-color: #81a4cd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5% 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
-  #add-book-form {
-    margin-left: 50vw;
-    margin-top: 25vh;
-    background-color: red;
-    width: fit-content;
-  }
+#add-book-form {
+  margin: 0 auto;
+  margin-top: 25vh;
+  height: fit-content;
+  width: 50%;
+  background-color: red;
+  border-radius: 8px;
+  text-align: center;
+  padding: 2%;
+}
+
+h3 {
+  font-size: 1.8em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 
-  #add-book {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-    height: 5vh;
-    border: 0;
-    font-size: 24px;
-    font-weight: 600;
-    background-color: #dbe4ee;
-  }
 
-  #add-book-container {
-    width: 100vw;
-    height: 10vh;
-    background-color: #dbe4ee;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2%;
-  }
+#text-inputs > input {
+  height: 2vh;
+  width: 100%;
+  padding-left: 1%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
-button {
+::placeholder {
+  text-align: left;
+}
+
+
+
+#add-book {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  height: 5vh;
+  border: 0;
+  font-size: 24px;
+  font-weight: 600;
+  background-color: #dbe4ee;
+}
+
+#add-book-container {
+  width: 100vw;
+  height: 10vh;
+  background-color: #dbe4ee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+button,
+header>div {
   transition: filter 0.15s ease-in-out;
 }
 
-  button:hover {
-    filter: brightness(95%);
-  }
+button:hover {
+  filter: brightness(97%);
+
+}
+
+header>div:hover {
+  filter: brightness(90%);
+
+}
