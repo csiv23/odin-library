@@ -6,15 +6,15 @@ document.addEventListener('click', function (e) {
     switch (true) {
         case e.target && e.target.id == "readButton":
             if (readButton.textContent == "Read") {
-                readButton.textContent = "Not read";
-                readButton.style.background = "#ff7070";
+                e.target.textContent = "Not read";
+                e.target.style.background = "#ff7070";
             } else {
-                readButton.textContent = "Read";
-                readButton.style.background = "#bfffbc";
+                e.target.textContent = "Read";
+                e.target.style.background = "#bfffbc";
             }
 
             var element = e.target;
-            var book = getBookFromElement(element);
+            var book = element.parentElement.parentElement;
             book.read = !book.read;
             console.log(book);
             break;

@@ -28,7 +28,7 @@
                     align-items: center;
                     width: 100%;">
                     <h3>Add new book</h3>
-                    <div id="text-inputs" style = "width: 100%;">
+                    <div id="text-inputs" style="width: 100%;">
                         <input type="text" id="title" placeholder="Title" required maxlength="100"> <br>
                         <input type="text" id="author" placeholder="Author" required maxlength="100"> <br>
                         <input type="number" id="pages" placeholder="Pages" min="1" required> <br>
@@ -37,9 +37,9 @@
                         <label for="read"> Read?</label>
                         <input type="checkbox" id="read" value="read"> <br>
                     </div>
-                    <div id="submission-content" style="display: flex;">
+                    <div id="submission-content">
                         <input type="submit" value="Submit" id="bookSubmit" onclick="submitClicked()">
-                        <input type="button" value="X" onclick="off()">
+                        <input type="button" value="X" id = "cancel" onclick="off()">
                     </div>
                 </div>
             </form>
