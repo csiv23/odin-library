@@ -6,7 +6,7 @@ document.addEventListener('click', function (e) {
     switch (true) {
         case e.target && e.target.id == "readButton":
             if (readButton.textContent == "Read") {
-                e.target.textContent = "Not read";
+                e.target.textContent = "Not Read";
                 e.target.style.background = "#ff7070";
             } else {
                 e.target.textContent = "Read";
@@ -16,7 +16,6 @@ document.addEventListener('click', function (e) {
             var element = e.target;
             var book = element.parentElement.parentElement;
             book.read = !book.read;
-            console.log(book);
             break;
         case e.target && e.target.id == "removeButton":
             var element = e.target;
@@ -53,12 +52,14 @@ function removeBook(bookTitle) {
         return object.title == bookTitle;
     });
     myLibrary.splice(indexOfObject, 1);
-
     bookTitle.parentElement.remove();
 }
 
 function addBookToLibrary(book) {
-    myLibrary.push(book)
+    if (myLibrary.filter(e => e.title == (book.title)).length < 1)
+    {
+        myLibrary.push(book)
+    }
 }
 
 function displayBooks() {
@@ -79,6 +80,10 @@ function determineValidInput(title, author, pages) {
     if ( title == "" || author == ""|| pages == "" || parseInt(pages) < 0) {  
         res = false;
     }
+    else if (myLibrary.filter(e => e.title == title).length >= 1) 
+    {
+        res = false;
+    }
     return res;
 }
 
@@ -86,7 +91,6 @@ function submitClicked() {
     var title = document.getElementById("title").value;
     var author = document.getElementById("author").value;
     var pages = document.getElementById("pages").value;
-    console.log(pages);
     var read = document.getElementById("read").checked;
 
     if(determineValidInput(title, author, pages)) {
@@ -110,12 +114,13 @@ function submitClicked() {
         readButton.textContent = "Read";
         readButton.style.background = "#bfffbc";
     } else {
-        readButton.textContent = "Not read";
+        readButton.textContent = "Not Read";
         readButton.style.background = "#ff7070";
     }
     removeButton.textContent = "Remove";
 
     titleElement.setAttribute('id', 'book-title');
+    authorElement.setAttribute('id', 'book-author');
     book.setAttribute('id', 'book');
     buttonWrapper.setAttribute('id', 'button-wrapper');
     readButton.setAttribute('id', 'readButton');
@@ -131,11 +136,15 @@ function submitClicked() {
     book.style.fontFamily = "Cambria";
     book.style.marginBottom = "1%";
     book.style.textAlign = "center";
-    book.style.fontSize = "40px";
+    book.style.fontSize = "18px";
     book.style.height = "200px";
     book.style.width = "200px";
     book.style.borderRadius = "8px";
     book.style.backgroundColor = "#dbe4ee";
+    book.style.display = "flex";
+    book.style.flexDirection = "column";
+    book.style.justifyContent = "space-evenly";
+    book.style.alignItems = "center";
     
     buttonWrapper.style.display = "flex";
     buttonWrapper.style.justifyContent = "center";
