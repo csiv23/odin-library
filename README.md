@@ -13,4 +13,5 @@
 * CSS
 * JavaScript
 
-[live preview](https://csiv23.github.io/odin-library/)
+## Live Preview
+A live preview of the site is available [here](https://csiv23.github.io/odin-library/).
